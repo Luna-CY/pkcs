@@ -13,8 +13,8 @@ func PKCS5Padding(cipherText []byte, blockSize int) []byte {
 	return append(cipherText, padText...)
 }
 
-// PKCS5UnPadding 实现了PKCS5填充的反向操作
-func PKCS5UnPadding(origData []byte) ([]byte, error) {
+// PKCS5Unpadding 实现了PKCS5填充的反向操作
+func PKCS5Unpadding(origData []byte) ([]byte, error) {
 	var length = len(origData)
 	if 0 == length {
 		return nil, errors.New("plaintext is empty")
